@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubing Timer & Scramble Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col md:flex-row h-dvh">
+
+
+    <!-- Main Timer and Scramble Section -->
+    <main id="main-timer-area" class="w-full md:w-3/4 flex flex-grow flex-col items-center justify-center p-4 md:p-8 order-2 md:order-1">
+        <!-- Scramble Display -->
+        <div class="mb-4 md:mb-8 text-center">
+            <h2 id="puzzle-type-display" class="text-xl md:text-2xl font-bold text-gray-400 mb-2">3x3x3</h2>
+            <p id="scramble" class="text-xl md:text-2xl lg:text-3xl font-bold text-yellow-400 tracking-wider min-h-[8rem] flex items-center justify-center leading-relaxed whitespace-pre-line">Loading scramble...</p>
+        </div>
+
+
+        <!-- Timer Display -->
+        <div id="timer" class="text-8xl sm:text-9xl md:text-[8rem] lg:text-[10rem] font-bold tracking-tighter">
+            0.00
+        </div>
+        
+        <!-- Puzzle Selector -->
+        <div class="mt-4 md:mt-8 w-full max-w-[250px]">
+            <select id="puzzle-select" class="bg-gray-700 text-white font-bold py-3 px-4 rounded-lg transition-colors w-full text-center text-lg">
+                <option value="2x2">2x2</option>
+                <option value="3x3" selected>3x3</option>
+                <option value="4x4">4x4</option>
+                <option value="5x5">5x5</option>
+                <option value="pyraminx">Pyraminx</option>
+            </select>
+        </div>
+    </main>
+
+
+    <!-- Solves and Stats Section -->
+    <aside class="w-full md:w-1/3 lg:w-1/4 bg-gray-800/50 p-4 flex flex-col order-1 md:order-2 overflow-y-auto h-2/5 md:h-full shrink-0">
+        <div class="border-b border-gray-600 pb-2 mb-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-bold">Session</h2>
+                <a href="settings.html" class="text-2xl text-gray-400 hover:text-white transition-colors">⚙️</a>
+            </div>
+            <div class="mt-2">
+                <select id="session-selector" class="w-full bg-gray-700 text-white p-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"></select>
+            </div>
+            <div class="flex justify-end gap-2 mt-2">
+                <button id="new-session-btn" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-1 px-3 rounded-lg text-xs">New</button>
+                <button id="rename-session-btn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-1 px-3 rounded-lg text-xs">Rename</button>
+                <button id="delete-session-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-lg text-xs">Delete</button>
+            </div>
+        </div>
+        
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4 mb-4 text-center">
+            <div class="bg-gray-700/50 p-2 rounded-lg">
+                <div class="text-sm text-gray-400">Best</div>
+                <div id="best-time" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-gray-700/50 p-2 rounded-lg">
+                <div class="text-sm text-gray-400">Worst</div>
+                <div id="worst-time" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-gray-700/50 p-2 rounded-lg">
+                <div class="text-sm text-gray-400">Current Ao5</div>
+                <div id="ao5" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-gray-700/50 p-2 rounded-lg">
+                <div class="text-sm text-gray-400">Current Ao12</div>
+                <div id="ao12" class="text-xl font-bold">-</div>
+            </div>
+             <div class="bg-green-800/50 p-2 rounded-lg">
+                <div class="text-sm text-green-300">Best Ao5</div>
+                <div id="best-ao5" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-red-800/50 p-2 rounded-lg">
+                <div class="text-sm text-red-300">Worst Ao5</div>
+                <div id="worst-ao5" class="text-xl font-bold">-</div>
+            </div>
+             <div class="bg-green-800/50 p-2 rounded-lg">
+                <div class="text-sm text-green-300">Best Ao12</div>
+                <div id="best-ao12" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-red-800/50 p-2 rounded-lg">
+                <div class="text-sm text-red-300">Worst Ao12</div>
+                <div id="worst-ao12" class="text-xl font-bold">-</div>
+            </div>
+            <div class="bg-gray-700/50 p-2 rounded-lg col-span-2">
+                <div class="text-sm text-gray-400">Session Avg</div>
+                <div id="average-time" class="text-xl font-bold">-</div>
+            </div>
+        </div>
+
+
+        <div class="flex-grow overflow-y-auto">
+            <table class="w-full text-sm text-left">
+                <thead class="text-xs text-gray-400 uppercase bg-gray-700/50 sticky top-0">
+                    <tr>
+                        <th scope="col" class="px-2 py-2">#</th>
+                        <th scope="col" class="px-2 py-2">Time</th>
+                        <th scope="col" class="px-2 py-2 text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="solves-list">
+                    <!-- Solves will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <p class="md:hidden text-center text-gray-500 text-xs mt-auto pt-2">Tap timer area to start/stop</p>
+        <button id="clear-solves" class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Clear All Solves (Q)</button>
+    </aside>
+
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+        <div class="bg-gray-800 rounded-lg p-8 shadow-xl w-full max-w-sm text-center">
+            <p id="modal-message" class="text-lg mb-6">Delete all solves for this puzzle?</p>
+            <div class="flex justify-center gap-4">
+                <button id="modal-cancel-btn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-6 rounded-lg transition-colors">Cancel</button>
+                <button id="modal-confirm-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
