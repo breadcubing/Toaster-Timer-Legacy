@@ -1,16 +1,24 @@
 # Toaster-Timer-Legacy
 
+## Toaster (Beta) is available!! 
 <div align="center">
+  
+<img width="6400" height="2400" alt="toaster- banner-logos" src="https://github.com/user-attachments/assets/1d585f40-b556-4f00-98ec-af1b870d3d87" />
+
+**Toaster (Beta) is the world's first ai powered rubik's cube learning platform**
+
+Check out the latest version at [Toaster (Beta)](https://github.com/cloustan/toaster).
+More details coming soon.
+
+# Toaster-Timer-Legacy
+This project is deprecated and is **no longer maintaned.**
+
+[View the Project](#about) • [Getting Started](#getting-started) • [Features](#features) • [Documentation](#documentation) • [Contributing](#contributing)
+
 
 ![GitHub License](https://img.shields.io/github/license/breadcubing/Toaster-Timer-Legacy)
 ![GitHub Stars](https://img.shields.io/github/stars/breadcubing/Toaster-Timer-Legacy)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/breadcubing/Toaster-Timer-Legacy)
-
-**A clean, simple and intuitive cubing timer and scramble generator**
-
-This project is deprecated and is **no longer maintaned.**
-
-[View the Project](#about) • [Getting Started](#getting-started) • [Features](#features) • [Documentation](#documentation) • [Contributing](#contributing)
 
 </div>
 
@@ -348,6 +356,7 @@ Thanks to all contributors who have helped with this project:
 ### Getting Help
 
 - Active support is not provided, this project is deprecated and is **no longer maintaned.**
+if you are using [Toaster (Beta)](https://github.com/cloustan/toaster), please use the report bug button on the dashboard of [Toaster (Beta)](https://github.com/cloustan/toaster).
 - 📖 **Documentation**: See docs/ folder
 
 ### Quick Links
