@@ -1,4 +1,5 @@
-# 🍞 Toaster-Timer-Legacy
+#Toaster-Timer-Legacy
+This project has been deprecated and is no longer maintaned.
 
 <div align="center">
 
