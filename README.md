@@ -1,5 +1,4 @@
-#Toaster-Timer-Legacy
-This project has been deprecated and is no longer maintaned.
+# Toaster-Timer-Legacy
 
 <div align="center">
 
@@ -8,6 +7,8 @@ This project has been deprecated and is no longer maintaned.
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/breadcubing/Toaster-Timer-Legacy)
 
 **A clean, simple and intuitive cubing timer and scramble generator**
+
+This project is deprecated and is **no longer maintaned.**
 
 [View the Project](#about) • [Getting Started](#getting-started) • [Features](#features) • [Documentation](#documentation) • [Contributing](#contributing)
 
@@ -315,16 +316,7 @@ npm run build
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 breadcubing
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
-```
+This project is licensed under the [BSL LICENSE](LICENSE) - see the LICENSE file for details.
 
 ---
 
@@ -355,8 +347,7 @@ Thanks to all contributors who have helped with this project:
 
 ### Getting Help
 
-- 💬 **Issues**: [GitHub Issues](https://github.com/breadcubing/Toaster-Timer-Legacy/issues)
-- 📧 **Email**: Check repository for contact info
+- Active support is not provided, this project is deprecated and is **no longer maintaned.**
 - 📖 **Documentation**: See docs/ folder
 
 ### Quick Links
