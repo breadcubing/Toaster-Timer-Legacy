@@ -7,7 +7,7 @@
 
 **Toaster (Beta) is the world's first ai powered rubik's cube learning platform**
 
-Check out the latest version at [Toaster (Beta)](https://github.com/cloustan/toaster).
+Check out the latest version at [Toaster (Beta)](https://toaster.cloustan.org).
 More details coming soon.
 
 # Toaster-Timer-Legacy
